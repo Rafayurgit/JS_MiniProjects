@@ -27,13 +27,14 @@
             justify-content: center;
             align-items: center;
 
-            background-color: rgba(36, 35, 35, 0.621);
+            background-color: rgba(36, 35, 35, 0.279);
             color: white;
-            width: 300px;
-            height: 300px;
+            width: 100vw;
+            height: 100vh;
 
-            font-size: 100px;
+            font-size: 20vw;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -47,8 +48,13 @@
     </div>
     <script>
         const timediv = document.querySelector("#inHero");
-        let date= new Date;
-        timediv.innerHTML=date.toLocaleTimeString()
+        
+        
+        setInterval(function(){
+            let date= new Date;
+            const options = { hour12: false };
+            timediv.innerHTML=date.toLocaleTimeString([], options)
+        },1000)
     </script>
 </body>
 </html>
