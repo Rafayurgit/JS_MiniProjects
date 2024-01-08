@@ -18,6 +18,9 @@
             
         }
         #hero{
+            width: 100vw;
+            height: 100vh;
+            
             position: absolute;
             top: 50%;
             left: 50%;
@@ -25,36 +28,47 @@
             
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center;            
+        }
 
-            background-color: rgba(36, 35, 35, 0.279);
+        .inhero{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+
+            background-color: rgb(32, 32, 32);
             color: white;
-            width: 100vw;
-            height: 100vh;
-
-            font-size: 20vw;
+            height: 90vh;
+            width: 80vw;
+            border-radius: 50px;
+            margin: 10px;
+            font-size: 40vw;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             white-space: nowrap;
+            text-decoration: line-through black ;
+            text-decoration-thickness: 4px;
         }
     </style>
 </head>
 <body>
     <div id="main">
         <div id="hero">
-            <div id="inHero">
+            <div class="inhero" id="hero1">
+            </div>
 
+            <div class="inhero" id="hero2">
             </div>
         </div>
     </div>
     <script>
-        const timediv = document.querySelector("#inHero");
-        
-        
-        setInterval(function(){
-            let date= new Date;
-            const options = { hour12: false };
-            timediv.innerHTML=date.toLocaleTimeString([], options)
-        },1000)
+        const hrsdiv = document.querySelector("#hero1");
+        const mintdiv = document.querySelector("#hero2");
+
+        let date= new Date;
+        hrsdiv.innerHTML=date.getHours();
+        mintdiv.innerHTML=date.getMinutes();
+
     </script>
 </body>
 </html>
