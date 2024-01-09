@@ -9,12 +9,15 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
         #main{
             position: relative;
             width: 100vw;
             height: 100vh;
             background-color: black;
+            overflow: hidden;
             
         }
         #hero{
@@ -38,36 +41,60 @@
             align-items: center;  
 
             background-color: rgb(32, 32, 32);
-            color: white;
+            
             height: 90vh;
             width: 80vw;
             border-radius: 50px;
             margin: 10px;
             font-size: 40vw;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            
             white-space: nowrap;
             text-decoration: line-through black ;
             text-decoration-thickness: 4px;
+        }
+        #ampm{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: absolute;
+            top: 5%;
+            left: 5%;
+
+
+            width: 80px;
+            height: 80px;
+            color: white;
+            font-size: 2vw;
+
+            
         }
     </style>
 </head>
 <body>
     <div id="main">
         <div id="hero">
-            <div class="inhero" id="hero1">
+            <div class="inhero" id="hours">
             </div>
-
-            <div class="inhero" id="hero2">
+            <div id="ampm">
+                <p>AM</p>
             </div>
+            <div class="inhero" id="minutes">
+            </div> 
         </div>
     </div>
     <script>
-        const hrsdiv = document.querySelector("#hero1");
-        const mintdiv = document.querySelector("#hero2");
+        const hrsdiv = document.querySelector("#hours");
+        const mintdiv = document.querySelector("#minutes");
+        const ampm = document.querySelector("#ampm");
 
         let date= new Date;
         hrsdiv.innerHTML=date.getHours();
         mintdiv.innerHTML=date.getMinutes();
+        ampm.innerHTML= date.getHours() >= 12 ? 'PM' : 'AM';
+
+        console.log(ampm)
+
 
     </script>
 </body>
