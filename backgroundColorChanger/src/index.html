@@ -9,7 +9,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: black;
             color: white;
         }
         #hero{
@@ -51,9 +50,31 @@
             console.log(color);
             return color;
         };
-        randomColor();
+
+        const startbtn=document.querySelector("#start");
+        const stopBtn= document.querySelector("#stop");
 
         
+        
+        let intervalID;
+        const changeColor= function(){
+            if(intervalID==null){
+                intervalID = setInterval(startChanigin,1000)
+            }
+
+            function startChanigin(){
+                document.body.style.backgroundColor = randomColor()
+            }
+        }
+
+        function stopeColor(){
+            clearInterval(intervalID)
+            intervalID=null;
+        }
+
+        startbtn.addEventListener('click', changeColor)
+        stopBtn.addEventListener('click', stopeColor)
+
         
         
     </script>
