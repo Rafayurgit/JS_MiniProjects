@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R0ckPaperScissor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <video autoplay muted loop id="video-bg">
+        
+        <source src="public/Free Stock Vídeo Crumpled Paper Background.mp4" type="video/mp4">
+    </video>
+
+    <h1>Rock Paper Scissor</h1>
+    <div class="choices">
+      <div class="choice" id="rock">
+        <h1>🪨</h1>
+      </div>
+      <div class="choice" id="paper">
+        <h1>📃</h1>
+      </div>
+      <div class="choice" id="scissor">
+        <h1>✂️</h1>
+      </div>
+    </div>
+
+    <div class="score-board">
+      <div class="score">
+        <p id="user-score">0</p>
+        <p>YOU</p>
+      </div>
+
+      <div class="score">
+        <p id="comp-score">0</p>
+        <p>COMP</p>
+      </div>
+    </div>
+
+    <div class="message-container">
+      <div id="msg">Start with Your Move</div>
+    </div>
+
+    <div style="flex-direction: column; margin-top: 2rem">
+      <button onclick="refreshPage()" id="retry-btn">ReTRY</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
