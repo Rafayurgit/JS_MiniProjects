@@ -55,6 +55,8 @@
         text-decoration: line-through black;
         text-decoration-thickness: 4px;
       }
+
+
       #ampm {
         display: flex;
         align-items: center;
@@ -68,9 +70,36 @@
         height: 80px;
         color: white;
         font-size: 2vw;
-
-       
       }
+
+      #full-sreen{
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
+
+        width: 30px;
+        height: 30px;
+        
+        background-color: rgb(32, 32, 32);
+       
+
+        
+        border: none;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        overflow:hidden;
+
+      }
+     
+      #full-screen img {
+    filter: brightness(0) invert(1);
+}
+      
+      
     </style>
   </head>
   <body>
@@ -80,20 +109,36 @@
         <div id="ampm">
           <p>AM</p>
         </div>
+        <div>
+          <button id="full-sreen"><img src="/digitalWatch/public/icon/switch-to-full-screen-button.png" alt="" srcset="" width="30" height="30"></button>
+        </div>
         <div class="inhero" id="minutes"></div>
       </div>
+      
     </div>
     <script>
+      setInterval(()=>{
       const hrsdiv = document.querySelector("#hours");
       const mintdiv = document.querySelector("#minutes");
       const ampm = document.querySelector("#ampm");
+      
 
       let date = new Date();
       hrsdiv.innerHTML = date.getHours();
       mintdiv.innerHTML = date.getMinutes();
       ampm.innerHTML = date.getHours() >= 12 ? "PM" : "AM";
+      },1000)
+      
+      const fullScreen= document.querySelector("#full-sreen");
+      fullScreen.addEventListener('click', toggelFullScreen);
+      function toggelFullScreen(){
+        if(document.fullscreenElement){
+          document.exitFullscreen();
+        }else{
+          document.documentElement.requestFullscreen();
+        }
+      }
 
-      console.log(ampm);
     </script>
   </body>
 </html>

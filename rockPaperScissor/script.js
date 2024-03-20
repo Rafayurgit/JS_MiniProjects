@@ -14,7 +14,7 @@ const genCompChoice=()=>{
 }
 
 const drawGame=()=>{
-    console.log("Game was draw");
+    
     msg.innerText="Game was draw!";
     msg.style.color = "grey";
 };
