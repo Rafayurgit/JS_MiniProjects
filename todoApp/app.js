@@ -17,16 +17,22 @@ btn.addEventListener("click", ()=>{
     task.value="";
 
 
-    let delBtns = document.querySelectorAll(".delete");
 
-for(delBtn of delBtns){
-    delBtn.addEventListener("click", function(){
-        let par= this.parentElement;
-        par.remove();   
+// let delBtns = document.querySelectorAll(".delete");
+// for(delBtn of delBtns){
+//     delBtn.addEventListener("click", function(){
+//         let par= this.parentElement;
+//         par.remove();   
         
-    })        
-}
+//     })        
+// }
 })
 
+ul.addEventListener("click", (event)=>{
+    let listItem= event.target.parentElement;
+    listItem.remove();
+    console.log("ListItem Clicked", listItem);
+    
+})
 
 
