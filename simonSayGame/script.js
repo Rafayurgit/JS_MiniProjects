@@ -33,3 +33,13 @@ function btnFlash(btn){
     }, 1000);
 }
 
+
+let allBtns= document.querySelectorAll(".btn");
+for (btn of allBtns){
+    btn.addEventListener("click", btnPress)
+}
+
+function btnPress(){
+    console.log(this);
+}
+
