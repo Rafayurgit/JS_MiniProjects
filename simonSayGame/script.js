@@ -30,7 +30,7 @@ function btnFlash(btn){
     btn.classList.add("flash");
     setTimeout(() => {
         btn.classList.remove("flash")
-    }, 1000);
+    }, 250);
 }
 
 
@@ -40,6 +40,8 @@ for (btn of allBtns){
 }
 
 function btnPress(){
+    let btn= this;
+    btnFlash(btn);
     console.log(this);
 }
 
